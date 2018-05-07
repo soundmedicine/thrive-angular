@@ -10,6 +10,6 @@ export class GrowthService {
   constructor(private _http: HttpClient) {}
 
   growthRates() {
-    return this._http.get('http://localhost:3000/females')
+    return this._http.get('https://thrive-server.herokuapp.com/females')
   }
 }
