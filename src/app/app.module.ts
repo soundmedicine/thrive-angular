@@ -5,11 +5,13 @@ import { GrowthService } from './growth.service'
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
+import { CompareComponent } from './compare/compare.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,

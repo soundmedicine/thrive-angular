@@ -52,6 +52,16 @@ export class AppComponent implements OnInit {
       let standardMonth18 = 11.11
       let standardMonth24 = 12.47
 
+      let standardBirthb = 2.94
+      let standardMonth1b = 3.5
+      let standardMonth2b = 5
+      let standardMonth4b = 5.8
+      let standardMonth6b = 6.71
+      let standardMonth9b = 7.57
+      let standardMonth12b = 8.25
+      let standardMonth15b = 8.84
+      let standardMonth18b = 9.43
+      let standardMonth24b = 10.56
 
       this.chart = new Chart('canvas', {
         
@@ -73,7 +83,7 @@ export class AppComponent implements OnInit {
                 month24
               ],
               label: 'Female Patient X',
-              borderColor: '#3cba9f',
+              borderColor: 'orange',
               fill: false
             },{
               data: [
@@ -89,7 +99,23 @@ export class AppComponent implements OnInit {
                   standardMonth24
                 ],
                 label: 'Standard (75th percentile)',
-                borderColor: 'orange',
+                borderColor: '#3cba9f',
+                fill: true
+            },{
+              data: [
+                  standardBirthb,
+                  standardMonth1b,
+                  standardMonth2b,
+                  standardMonth4b,
+                  standardMonth6b,
+                  standardMonth9b,
+                  standardMonth12b,
+                  standardMonth15b,
+                  standardMonth18b,
+                  standardMonth24b
+                ],
+                label: 'Standard (25th percentile)',
+                borderColor: 'lightgreen',
                 fill: true
             }
           ]
