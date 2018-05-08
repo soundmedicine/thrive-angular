@@ -59,17 +59,6 @@ export class AppComponent implements OnInit {
         data: {
           labels: ['0', '1', '2', '4', '6', '9', '12', '15', '18', '24'],
           datasets: [
-            // {
-            //   label: 'Female',
-            //   backgroundColor: 'red',
-            //   borderColor: 'red',
-            //   data: [
-            //     birthweight,
-            //     month1,
-            //     month2
-            //   ],
-            //   fill: false,
-            // }
             {
               data: [
                 birth1, 
@@ -83,6 +72,7 @@ export class AppComponent implements OnInit {
                 month18, 
                 month24
               ],
+              label: 'Female Patient X',
               borderColor: '#3cba9f',
               fill: false
             },{
@@ -98,6 +88,7 @@ export class AppComponent implements OnInit {
                   standardMonth18,
                   standardMonth24
                 ],
+                label: 'Standard (75th percentile)',
                 borderColor: 'orange',
                 fill: true
             }
@@ -110,7 +101,7 @@ export class AppComponent implements OnInit {
             text: 'Chart by Weight'
           },
           legend: {
-            display: false
+            display: true
           },
           scales: {
             xAxes: [{
