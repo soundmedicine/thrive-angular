@@ -24,6 +24,7 @@
     "core-js": "^2.5.4",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
+    "surge": "^0.20.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

@@ -32,7 +32,7 @@ export class AppComponent {
       // console.log(newPatient)
       
       let newPatient = this.data
-      console.log(newPatient[0])
+      console.log(newPatient)
 
       let birth1 = parseInt(newPatient[0])
       let month1 = parseInt(newPatient[1])

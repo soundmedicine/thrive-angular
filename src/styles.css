@@ -5,3 +5,34 @@ body {
 canvas {
     height: 100vh;
 }
+
+.brand-logo {
+    /* font-family: 'Roboto Slab', serif; */
+    /* font-family: 'Delius Unicase', cursive; */
+    font-family: 'Happy Monkey', cursive;
+    /* font-family: 'Archivo Narrow', sans-serif; */
+    /* font-family: 'Rubik', sans-serif; */
+}
+
+h5 {
+    /* font-family: 'Roboto Slab', serif; */
+    /* font-family: 'Delius Unicase', cursive; */
+    /* font-family: 'Happy Monkey', cursive; */
+    font-family: 'Archivo Narrow', sans-serif;
+    /* font-family: 'Rubik', sans-serif; */
+}
+
+li {
+    /* font-family: 'Roboto Slab', serif; */
+    /* font-family: 'Delius Unicase', cursive; */
+    /* font-family: 'Happy Monkey', cursive; */
+    /* font-family: 'Archivo Narrow', sans-serif; */
+    font-family: 'Rubik', sans-serif;
+}
+
+p {
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Happy Monkey', cursive;
+    /* font-family: 'Archivo Narrow', sans-serif; */
+    /* font-family: 'Rubik', sans-serif; */
+}
