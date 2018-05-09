@@ -5,11 +5,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 export class GrowthService {
-  data;
+
+  data
 
   constructor(private _http: HttpClient) {}
 
   growthRates() {
     return this._http.get('https://thrive-server.herokuapp.com/females')
+  }
+
+  ngOnInit() {
+    console.log(this.data)
   }
 }

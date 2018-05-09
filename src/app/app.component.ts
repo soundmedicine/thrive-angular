@@ -1,46 +1,50 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { GrowthService } from './growth.service'
 import { Chart } from 'chart.js'
+import { CompareComponent } from './compare/compare.component';
+import { PatientService } from './patient.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+
+export class AppComponent {
   data
   chart = []
 
-  constructor(private _growth: GrowthService) {}
+  constructor(private _growth: GrowthService, private _patient: PatientService) {}
 
   ngOnInit() {
     this._growth.growthRates()
-    .subscribe(data => {
+    .subscribe(this.populateChart)
+    this._patient.patientData
+    .subscribe(this.populateChart)
+  }
+
+  populateChart(data) {
+
       this.data = data
       console.log(this.data.females)
     
-      let female1 = this.data.females[0]
+      // let newPatient = this.data.females ? this.data.females[0] : this.data
+      // console.log(newPatient)
+      
+      let newPatient = this.data
+      console.log(newPatient[0])
 
-      let birth1 = female1.birth
-      let month1 = female1.month1
-      let month2 = female1.month2
-      let month4 = female1.month4
-      let month6 = female1.month6
-      let month9 = female1.month9
-      let month12 = female1.month12
-      let month15 = female1.month15
-      let month18 = female1.month18
-      let month24 = female1.month24
-      // let birthweight = this.data.females.map(female => female.birth)
-      // let month1 = this.data.females.map(female => female.month1)
-      // let month2 = this.data.females.map(female => female.month2)
-      // let month4 = this.data.females.map(female => female.month4)
-      // let month6 = this.data.females.map(female => female.month6)
-      // let month9 = this.data.females.map(female => female.month9)
-      // let month12 = this.data.females.map(female => female.month12)
-      // let month15 = this.data.females.map(female => female.month15)
-      // let month18= this.data.females.map(female => female.month18)
-      // let month24= this.data.females.map(female => female.month24)
+      let birth1 = parseInt(newPatient[0])
+      let month1 = parseInt(newPatient[1])
+      let month2 = parseInt(newPatient[2])
+      let month4 = parseInt(newPatient[3])
+      let month6 = parseInt(newPatient[4])
+      let month9 = parseInt(newPatient[5])
+      let month12 = parseInt(newPatient[6])
+      let month15 = parseInt(newPatient[7])
+      let month18 = parseInt(newPatient[8])
+      let month24 = parseInt(newPatient[9])
+      
       let standardBirth = 3.53
       let standardMonth1 = 4
       let standardMonth2 = 5.35
@@ -63,6 +67,7 @@ export class AppComponent implements OnInit {
       let standardMonth18b = 9.43
       let standardMonth24b = 10.56
 
+      
       this.chart = new Chart('canvas', {
         
         type: 'line',
@@ -71,48 +76,48 @@ export class AppComponent implements OnInit {
           datasets: [
             {
               data: [
-                birth1, 
-                month1, 
-                month2, 
-                month4, 
-                month6, 
-                month9, 
+                birth1,
+                month1,
+                month2,
+                month4,
+                month6,
+                month9,
                 month12,
-                month15, 
-                month18, 
+                month15,
+                month18,
                 month24
               ],
-              label: 'Female Patient X',
-              borderColor: 'orange',
+              label: 'Subject X',
+              borderColor: 'red',
               fill: false
             },{
               data: [
-                  standardBirth,
-                  standardMonth1,
-                  standardMonth2,
-                  standardMonth4,
-                  standardMonth6,
-                  standardMonth9,
-                  standardMonth12,
-                  standardMonth15,
-                  standardMonth18,
-                  standardMonth24
+                standardBirth,
+                standardMonth1,
+                standardMonth2,
+                standardMonth4,
+                standardMonth6,
+                standardMonth9,
+                standardMonth12,
+                standardMonth15,
+                standardMonth18,
+                standardMonth24
                 ],
                 label: 'Standard (75th percentile)',
                 borderColor: '#3cba9f',
                 fill: true
             },{
               data: [
-                  standardBirthb,
-                  standardMonth1b,
-                  standardMonth2b,
-                  standardMonth4b,
-                  standardMonth6b,
-                  standardMonth9b,
-                  standardMonth12b,
-                  standardMonth15b,
-                  standardMonth18b,
-                  standardMonth24b
+                standardBirthb,
+                standardMonth1b,
+                standardMonth2b,
+                standardMonth4b,
+                standardMonth6b,
+                standardMonth9b,
+                standardMonth12b,
+                standardMonth15b,
+                standardMonth18b,
+                standardMonth24b
                 ],
                 label: 'Standard (25th percentile)',
                 borderColor: 'lightgreen',
@@ -147,6 +152,6 @@ export class AppComponent implements OnInit {
           }
         }
       })
-    })
+    }
   }
-}
+

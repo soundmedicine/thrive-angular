@@ -1,69 +1,84 @@
-<div input-field>
-  <label>Birth weight</label>
-  <input 
-    name="birth" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 1 month</label>
-  <input 
-    name="month1" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 2 months</label>
-  <input 
-    name="month2" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 4 months</label>
-  <input 
-  name="month4" 
-  type="text" 
-  ng-model="dummyInputs.inputFieldInput" 
-  length="5">
-  <label>Weight at 6 months</label>
-  <input 
-    name="month6" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 9 months</label>
-  <input 
-    name="month9" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 12 months</label>
-  <input 
-    name="month12" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 15 months</label>
-  <input 
-    name="month15" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput"
-    length="5">
-  <label>Weight at 18 months</label>
-  <input 
-    name="month18" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <label>Weight at 24 months</label>
-  <input 
-    name="month24" 
-    type="text" 
-    ng-model="dummyInputs.inputFieldInput" 
-    length="5">
-  <input
-    routerLink="/about"
-    routerLinkActive="active"
-    type="submit"
-    name="submit"
-    value="Submit"
-  />
-  </div>
+<form (ngSubmit)="onPopulateChart()" ng-submit="submit()" #Charty="ngForm">
+  <div input-field>
+    <label>Birth weight</label>
+    <input 
+      [(ngModel)]="newBirth"
+      name="birth" 
+      id="birth"
+      type="text"  
+      length="5">
+    <label>Weight at 1 month</label>
+    <input 
+    [(ngModel)]="newMonth1" 
+      id="month1"
+      name="month1" 
+      type="text"  
+      length="5">
+    <label>Weight at 2 months</label>
+    <input 
+    [(ngModel)]="newMonth2"
+      id="month2"
+      name="month2" 
+      type="text"  
+      length="5">
+    <label>Weight at 4 months</label>
+    <input 
+    [(ngModel)]="newMonth4"
+      id="month4"
+      name="month4" 
+      type="text"  
+      length="5">
+    <label>Weight at 6 months</label>
+    <input 
+    [(ngModel)]="newMonth6"
+      id="month6"
+      name="month6" 
+      type="text"  
+      length="5">
+    <label>Weight at 9 months</label>
+    <input 
+    [(ngModel)]="newMonth9"
+      id="month9"
+      name="month9" 
+      type="text"  
+      length="5">
+    <label>Weight at 12 months</label>
+    <input 
+    [(ngModel)]="newMonth12"
+      id="month12"
+      name="month12" 
+      type="text" 
+      ng-model="dummyInputs.inputFieldInput" 
+      length="5">
+    <label>Weight at 15 months</label>
+    <input 
+    [(ngModel)]="newMonth15"
+      id="month15"
+      name="month15" 
+      type="text" 
+      ng-model="dummyInputs.inputFieldInput"
+      length="5">
+    <label>Weight at 18 months</label>
+    <input 
+    [(ngModel)]="newMonth18" 
+      id="month18"
+      name="month18" 
+      type="text" 
+      ng-model="dummyInputs.inputFieldInput" 
+      length="5">
+    <label>Weight at 24 months</label>
+    <input 
+    [(ngModel)]="newMonth24" 
+      id="month24"
+      name="month24" 
+      type="text" 
+      ng-model="dummyInputs.inputFieldInput" 
+      length="5">
+    <input
+      routerLinkActive="active"
+      type="submit"
+      name="submit"
+      value="Submit"
+    />
+    </div>
+  </form>
