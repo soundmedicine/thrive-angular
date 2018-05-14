@@ -6,3 +6,5 @@ The application allows users to view growth standards from birth to 24 months of
 
 Currently deployed to http://thriveapp.surge.sh.
 Back-end deployed to https://thrive-server.herokuapp.com (at endpoints '/females' and   '/males').
+
+Run `ng serve` from the app root directory to run it locally.
